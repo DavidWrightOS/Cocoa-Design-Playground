@@ -25,4 +25,24 @@
     return self;
 }
 
+- (NSString *)description
+{
+    static NSDictionary<NSNumber *, NSString *> *hairLookup = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        hairLookup = @{
+            @(PersonHairColorBrown): @"Brown",
+            @(PersonHairColorBlonde): @"Blonde",
+            @(PersonHairColorOrange): @"Orange",
+            @(PersonHairColorBlue): @"Blue",
+            @(PersonHairColorTeal): @"Teal",
+        };
+    });
+    
+    NSString *hairColorString = [hairLookup objectForKey:@(self.hairColor)];
+    
+    return [NSString stringWithFormat:@"<%@: %p: %@, born on %@, with hair color: %@>",
+            NSStringFromClass(self.class), self, self.fullName, self.birthDate, hairColorString];
+}
+
 @end
