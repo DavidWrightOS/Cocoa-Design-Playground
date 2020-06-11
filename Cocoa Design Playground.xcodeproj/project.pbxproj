@@ -14,6 +14,7 @@
 		638B7BAA2491C33300A3F7CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638B7BA92491C33300A3F7CB /* Assets.xcassets */; };
 		638B7BAD2491C33300A3F7CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 638B7BAB2491C33300A3F7CB /* LaunchScreen.storyboard */; };
 		638B7BB02491C33300A3F7CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B7BAF2491C33300A3F7CB /* main.m */; };
+		638B7BB82491C35900A3F7CB /* PersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638B7BB72491C35900A3F7CB /* PersonController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		638B7BAC2491C33300A3F7CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		638B7BAE2491C33300A3F7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		638B7BAF2491C33300A3F7CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		638B7BB62491C35900A3F7CB /* PersonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonController.h; sourceTree = "<group>"; };
+		638B7BB72491C35900A3F7CB /* PersonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				638B7BA12491C33100A3F7CB /* SceneDelegate.m */,
 				638B7BA32491C33100A3F7CB /* ViewController.h */,
 				638B7BA42491C33100A3F7CB /* ViewController.m */,
+				638B7BB62491C35900A3F7CB /* PersonController.h */,
+				638B7BB72491C35900A3F7CB /* PersonController.m */,
 				638B7BA62491C33100A3F7CB /* Main.storyboard */,
 				638B7BA92491C33300A3F7CB /* Assets.xcassets */,
 				638B7BAB2491C33300A3F7CB /* LaunchScreen.storyboard */,
@@ -148,6 +153,7 @@
 			files = (
 				638B7BA52491C33100A3F7CB /* ViewController.m in Sources */,
 				638B7B9F2491C33100A3F7CB /* AppDelegate.m in Sources */,
+				638B7BB82491C35900A3F7CB /* PersonController.m in Sources */,
 				638B7BB02491C33300A3F7CB /* main.m in Sources */,
 				638B7BA22491C33100A3F7CB /* SceneDelegate.m in Sources */,
 			);
