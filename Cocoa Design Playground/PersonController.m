@@ -7,6 +7,7 @@
 //
 
 #import "PersonController.h"
+#import "Person.h"
 
 @implementation PersonController
 
@@ -54,8 +55,29 @@
     
     // make sure the delegate implements the method we are interested in before actually calling the method
     if ([self.delegate respondsToSelector:@selector(personController:didObserveNewBirth:)]) {
-        [self.delegate personController:self didObserveNewBirth:@"New Child"];
+        Person *person = [[Person alloc] initWithName:[self generateRandomName] birthDate:NSDate.now hairColor:arc4random_uniform(5)];
+        
+        [self.delegate personController:self didObserveNewBirth:person];
     }
+}
+
+- (NSString *)generateRandomName
+{
+    static NSArray *firstNames = nil;
+    static NSArray *lastNames = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        firstNames = @[@"Dimitri", @"Alex", @"David", @"Jessie", @"Chad"];
+        lastNames = @[@"Bouniol", @"Thompson", @"Chad"];
+    });
+    
+    NSUInteger randomIndex = arc4random_uniform((uint32_t)firstNames.count);
+    NSString *randomFirstName = [firstNames objectAtIndex:randomIndex];
+    NSString *randomLastName = [lastNames objectAtIndex:arc4random_uniform((uint32_t)lastNames.count)];
+    
+    return [NSString stringWithFormat:@"%@ %@", randomFirstName, randomLastName];
+    
 }
 
 @end

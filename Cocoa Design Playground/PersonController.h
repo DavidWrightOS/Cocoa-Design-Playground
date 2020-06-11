@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol PersonControllerDelegate;
+@class Person;
 
 @interface PersonController : NSObject
 
@@ -26,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required // implicit
 @optional
-- (void)personController:(PersonController *)aPersonController didObserveNewBirth:(id)person;
+- (void)personController:(PersonController *)aPersonController didObserveNewBirth:(Person *)person;
 
 @end
 
