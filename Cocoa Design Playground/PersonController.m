@@ -34,9 +34,28 @@
 {
     if (self = [super init]) {
         // you can also configure your person controller here
+        
+        [NSTimer scheduledTimerWithTimeInterval:5
+                                         target:self
+                                       selector:@selector(recordNewBirth:)
+                                       userInfo:nil
+                                        repeats:YES];
     }
     
     return self;
+}
+
+- (void)recordNewBirth:(id)sender
+{
+//    if ([self.delegate isKindOfClass:NSString.class]) { // check if the delegate is of type NSString, or one of its subclasses
+//    if ([self.delegate isMemberOfClass:NSString.class]) {} // check if the delegate is of type NSString (this method sucks)
+
+//    if ([self.delegate conformsToProtocol:@protocol(PersonControllerDelegate)]) { // this method sucks
+    
+    // make sure the delegate implements the method we are interested in before actually calling the method
+    if ([self.delegate respondsToSelector:@selector(personController:didObserveNewBirth:)]) {
+        [self.delegate personController:self didObserveNewBirth:@"New Child"];
+    }
 }
 
 @end

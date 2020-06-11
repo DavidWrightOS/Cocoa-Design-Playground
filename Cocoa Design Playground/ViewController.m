@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "PersonController.h"
 
-@interface ViewController ()
+@interface ViewController () <PersonControllerDelegate>
 
 @end
 
@@ -25,6 +25,16 @@
     PersonController *sharedControllerB = PersonController.sharedPersonController;
     NSLog(@"Person Controller B: %@", sharedControllerB);
     
+    PersonController.sharedPersonController.delegate = self;
+}
+
+- (void)personController:(PersonController *)aPersonController didObserveNewBirth:(id)person
+{
+    if ([person isKindOfClass:NSString.class]) {
+        // We know this is a string!
+    }
+    
+    NSLog(@"New birth! %@", person);
 }
 
 
