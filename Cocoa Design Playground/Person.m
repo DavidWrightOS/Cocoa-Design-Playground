@@ -77,4 +77,26 @@
     return self.fullName.hash ^ self.birthDate.hash ^ @(self.hairColor).hash ^ @(_hasBirthMark).hash;
 }
 
+/*
+- (BOOL)addPerson:(Person *)aPerson toOrangeHairCrowdWithError:(NSError **)error
+{
+    if (aPerson.hairColor == PersonHairColorOrange) {
+        if (![orangeHairCrowd containsObject:aPerson]) {
+            [orangeHairCrowd addObject:aPerson];
+            return YES;
+        } else {
+            if (error) {
+                *error = [NSError errorWithDomain:@"HairCrowdDomain" code:1 userInfo:@{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"%@ already exists in the crowd! %@", aPerson, orangeHairCrowd]}];
+            }
+            return NO;
+        }
+    } else {
+        if (error) {
+            *error = [NSError errorWithDomain:@"HairCrowdDomain" code:0 userInfo:@{NSLocalizedDescriptionKey: @"The person's hair is not orange!"}];
+        }
+        return NO;
+    }
+}
+*/
+
 @end
