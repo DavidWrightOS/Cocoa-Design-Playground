@@ -35,12 +35,16 @@
 //        // We know this is a string!
 //    }
     
-    NSLog(@"New birth! %@", person);
+//    NSLog(@"New birth! %@", person);
     
     Person *clone = person.copy;
-    NSLog(@"Their clone!: %@", clone);
+//    NSLog(@"Their clone!: %@", clone);
     
     NSLog(@"Original: %p, clone: %p", self, clone);
+    
+    if ([person isEqual:clone]) {
+        NSLog(@"They are still identical!!!");
+    }
 }
 
 

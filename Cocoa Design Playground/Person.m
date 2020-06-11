@@ -8,6 +8,11 @@
 
 #import "Person.h"
 
+@interface Person (){
+    BOOL _hasBirthMark;
+}
+@end
+
 @implementation Person
 
 - (instancetype)init
@@ -21,6 +26,8 @@
         _fullName = aName.copy;
         _birthDate = aBirthDate;
         _hairColor = aHairColor;
+        
+        _hasBirthMark = arc4random_uniform(2) == 0 ? NO : YES;
     }
     return self;
 }
@@ -52,6 +59,22 @@
     copy.hairColor = self.hairColor;
     
     return copy;
+}
+
+- (BOOL)isEqual:(Person *)object
+{
+    if (![object isKindOfClass:Person.class]) return NO;
+    if (self == object) return YES;
+    
+    return [self.fullName isEqualToString:object.fullName]
+    && [self.birthDate isEqualToDate:object.birthDate]
+    && self.hairColor == object.hairColor
+    && _hasBirthMark == object->_hasBirthMark;
+}
+
+- (NSUInteger)hash
+{
+    return self.fullName.hash ^ self.birthDate.hash ^ @(self.hairColor).hash ^ @(_hasBirthMark).hash;
 }
 
 @end
