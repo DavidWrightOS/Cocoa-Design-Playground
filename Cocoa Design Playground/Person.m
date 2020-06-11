@@ -45,4 +45,13 @@
             NSStringFromClass(self.class), self, self.fullName, self.birthDate, hairColorString];
 }
 
+- (nonnull id)copyWithZone:(nullable NSZone *)zone {
+    Person *copy = [[Person alloc] init];
+    copy.fullName = self.fullName;
+    copy.birthDate = self.birthDate;
+    copy.hairColor = self.hairColor;
+    
+    return copy;
+}
+
 @end

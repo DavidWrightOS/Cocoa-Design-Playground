@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PersonController.h"
+#import "Person.h"
 
 @interface ViewController () <PersonControllerDelegate>
 
@@ -28,13 +29,18 @@
     PersonController.sharedPersonController.delegate = self;
 }
 
-- (void)personController:(PersonController *)aPersonController didObserveNewBirth:(id)person
+- (void)personController:(PersonController *)aPersonController didObserveNewBirth:(Person *)person
 {
-    if ([person isKindOfClass:NSString.class]) {
-        // We know this is a string!
-    }
+//    if ([person isKindOfClass:NSString.class]) {
+//        // We know this is a string!
+//    }
     
     NSLog(@"New birth! %@", person);
+    
+    Person *clone = person.copy;
+    NSLog(@"Their clone!: %@", clone);
+    
+    NSLog(@"Original: %p, clone: %p", self, clone);
 }
 
 

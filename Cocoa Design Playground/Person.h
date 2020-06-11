@@ -18,7 +18,7 @@ typedef NS_ENUM(NSUInteger, PersonHairColor) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Person : NSObject
+@interface Person : NSObject <NSCopying>
 
 @property (nonatomic, copy) NSString *fullName;
 @property (nonatomic) NSDate *birthDate;
