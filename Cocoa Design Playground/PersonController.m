@@ -10,4 +10,26 @@
 
 @implementation PersonController
 
++ (instancetype)sharedPersonController
+{
+    static PersonController *personController = nil; // global, but only accessible in this method
+    
+    if (!personController) {
+        personController = [[PersonController alloc] init];
+        
+        // configure your person controller here
+    }
+    
+    return personController;
+}
+
+- (instancetype)initSharedInstance
+{
+    if (self = [super init]) {
+        // you can also configure your person controller here
+    }
+    
+    return self;
+}
+
 @end

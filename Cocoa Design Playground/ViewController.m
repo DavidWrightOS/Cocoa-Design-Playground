@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "PersonController.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+//    PersonController *sharedController = [PersonController sharedPersonController];
+    PersonController *sharedControllerA = PersonController.sharedPersonController;
+    NSLog(@"Person Controller A: %@", sharedControllerA);
+    
+    PersonController *sharedControllerB = PersonController.sharedPersonController;
+    NSLog(@"Person Controller B: %@", sharedControllerB);
+    
 }
 
 
