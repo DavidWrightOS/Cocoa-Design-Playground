@@ -10,6 +10,11 @@
 
 @implementation Person
 
+- (instancetype)init
+{
+    return [self initWithName:@"Bob" birthDate:NSDate.date hairColor:PersonHairColorBrown];
+}
+
 - (instancetype)initWithName:(NSString *)aName birthDate:(NSDate *)aBirthDate hairColor:(PersonHairColor)aHairColor
 {
     if (self = [super init]) {

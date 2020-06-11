@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSDate *birthDate;
 @property (nonatomic) PersonHairColor hairColor; // Enumerations are a C type, so they are not initialized as a pointer *
 
-- (instancetype)initWithName:(NSString *)aName birthDate:(NSDate *)aBirthDate hairColor:(PersonHairColor)hairColor;
+- (instancetype)initWithName:(NSString *)aName birthDate:(NSDate *)aBirthDate hairColor:(PersonHairColor)hairColor NS_DESIGNATED_INITIALIZER;
 
 @end
 
